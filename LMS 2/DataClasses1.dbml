@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LMS" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=APDO-PC;Initial Catalog=LMS;Integrated Security=True" SettingsObjectName="LMS_2.Properties.Settings" SettingsPropertyName="LMSConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.selectAllBooks" Method="selectAllBooks">
+    <ElementType Name="selectAllBooksResult">
+      <Column Name="book_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="available" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="publisher_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectBookById" Method="selectBookById">
+    <Parameter Name="book_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="selectBookByIdResult">
+      <Column Name="book_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="available" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="publisher_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertNewBook" Method="insertNewBook">
+    <Parameter Name="bTitle" Type="System.String" DbType="VarChar(225)" />
+    <Parameter Name="bAuthor" Type="System.String" DbType="VarChar(225)" />
+    <Parameter Name="bPrice" Type="System.Double" DbType="Float" />
+    <Parameter Name="bAvailable" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="bPublisherId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteBookById" Method="deleteBookById">
+    <Parameter Name="book_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.selectAllPublishers" Method="selectAllPublishers">
+    <ElementType Name="selectAllPublishersResult">
+      <Column Name="pub_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pub_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="pub_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectPublisherById" Method="selectPublisherById">
+    <Parameter Name="publisher_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="selectPublisherByIdResult">
+      <Column Name="pub_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pub_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="pub_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertNewPublisher" Method="insertNewPublisher">
+    <Parameter Name="pName" Type="System.String" DbType="VarChar(225)" />
+    <Parameter Name="PAddress" Parameter="pAddress" Type="System.String" DbType="VarChar(225)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deletePublisherById" Method="deletePublisherById">
+    <Parameter Name="PId" Parameter="pId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteMemberById" Method="deleteMemberById">
+    <Parameter Name="MId" Parameter="mId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.selectAllMembers" Method="selectAllMembers">
+    <ElementType Name="selectAllMembersResult">
+      <Column Name="mem_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mem_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="mem_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="mem_subscribe_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="mem_expiry_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectMemberById" Method="selectMemberById">
+    <Parameter Name="member_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="selectMemberByIdResult">
+      <Column Name="mem_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mem_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="mem_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="mem_subscribe_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="mem_expiry_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertNewMember" Method="insertNewMember">
+    <Parameter Name="MName" Parameter="mName" Type="System.String" DbType="VarChar(225)" />
+    <Parameter Name="MAddress" Parameter="mAddress" Type="System.String" DbType="VarChar(225)" />
+    <Parameter Name="MSubscribeDate" Parameter="mSubscribeDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MExpiryDate" Parameter="mExpiryDate" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
